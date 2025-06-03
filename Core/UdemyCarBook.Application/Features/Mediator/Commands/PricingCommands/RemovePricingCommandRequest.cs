@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UdemyCarBook.Application.Features.Mediator.Commands.LocationCommands
+namespace UdemyCarBook.Application.Features.Mediator.Commands.PricingCommands
 {
-    public class RemoveLocationCommandRequest: IRequest
+    public class RemovePricingCommandRequest: IRequest
     {
         public int Id { get; set; }
-        public RemoveLocationCommandRequest(int id)
+        public RemovePricingCommandRequest(int id)
         {
             Id = id;
         }
