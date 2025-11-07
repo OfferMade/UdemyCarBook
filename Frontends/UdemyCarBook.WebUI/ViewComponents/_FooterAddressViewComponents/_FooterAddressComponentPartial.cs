@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using UdemyCarBook.Dto.ContactDtos;
+using UdemyCarBook.Dto.FooterAddressDtos;
 
 
 namespace UdemyCarBook.WebUI.ViewComponents.FooterAddressesComponents

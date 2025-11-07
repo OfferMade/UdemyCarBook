@@ -10,6 +10,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyCarBook.Persistance", "Infrastructure\UdemyCarBook.Persistance\UdemyCarBook.Persistance.csproj", "{52B72226-8F6C-44A1-915C-7A9892397641}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{E65F6267-E63E-42D6-B62D-8E73B5B1FC96}"
+	ProjectSection(SolutionItems) = preProject
+		Infrastructure\UdemyCarBook.Persistance\Repositories\Repository.cs = Infrastructure\UdemyCarBook.Persistance\Repositories\Repository.cs
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyCarBook.WebApi", "Presentation\UdemyCarBook.WebApi\UdemyCarBook.WebApi.csproj", "{C0B798BD-A0D9-4F97-93DE-EDF8318D1210}"
 EndProject

@@ -4,11 +4,15 @@ using UdemyCarBook.Application.Features.CQRS.Handlers.BrandHandlers;
 using UdemyCarBook.Application.Features.CQRS.Handlers.CarHandlers;
 using UdemyCarBook.Application.Features.CQRS.Handlers.CategoryHandlers;
 using UdemyCarBook.Application.Features.CQRS.Handlers.ContactHandlers;
+using UdemyCarBook.Application.Features.Mediator.Handlers.AuthorHandlers;
+using UdemyCarBook.Application.Features.Mediator.Handlers.BlogHandlers;
 using UdemyCarBook.Application.Interfaces;
+using UdemyCarBook.Application.Interfaces.BlogInterfaces;
 using UdemyCarBook.Application.Interfaces.CarInterfaces;
 using UdemyCarBook.Application.Services;
 using UdemyCarBook.Persistance.Context;
 using UdemyCarBook.Persistance.Repositories;
+using UdemyCarBook.Persistance.Repositories.BlogRepositories;
 using UdemyCarBook.Persistance.Repositories.CarRepositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +21,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<CarBookContext>();
 builder.Services.AddScoped(typeof(IRepository<>),typeof(Repository<>));
 builder.Services.AddScoped(typeof(ICarRepository),typeof(CarRepository));
+builder.Services.AddScoped(typeof(IBlogRepository),typeof(BlogRepository));
 
 builder.Services.AddScoped<GetAboutByIdQueryHandler>();
 builder.Services.AddScoped<GetAboutQueryHandler>();
@@ -44,6 +49,7 @@ builder.Services.AddScoped<CreateCarCommandHandler>();
 builder.Services.AddScoped<GetCarQueryHandler>();
 builder.Services.AddScoped<GetCarByIdQueryHandler>();
 builder.Services.AddScoped<GetCarWithBrandQueryHandler>();
+builder.Services.AddScoped<GetLast5CarsWithBrandQueryHandler>();
 
 builder.Services.AddScoped<RemoveCategoryCommandHandler>();
 builder.Services.AddScoped<UpdateCategoryCommandHandler>();
@@ -56,6 +62,19 @@ builder.Services.AddScoped<UpdateContactCommandHandler>();
 builder.Services.AddScoped<CreateContactCommandHandler>();
 builder.Services.AddScoped<GetContactQueryHandler>();
 builder.Services.AddScoped<GetContactByIdQueryHandler>();
+
+builder.Services.AddScoped<RemoveAuthorCommandHandler>();
+builder.Services.AddScoped<UpdateAuthorCommandHandler>();
+builder.Services.AddScoped<CreateAuthorCommandHandler>();
+builder.Services.AddScoped<GetAuthorQueryHandler>();
+builder.Services.AddScoped<GetAuthorByIdQueryHandler>();
+
+builder.Services.AddScoped<RemoveBlogCommandHandler>();
+builder.Services.AddScoped<UpdateBlogCommandHandler>();
+builder.Services.AddScoped<CreateBlogCommandHandler>();
+builder.Services.AddScoped<GetBlogQueryHandler>();
+builder.Services.AddScoped<GetBlogByIdQueryHandler>();
+builder.Services.AddScoped<GetLast3BlogsWithAuthorQueryHandler>();
 
 builder.Services.AddApplicationService(builder.Configuration);
 
